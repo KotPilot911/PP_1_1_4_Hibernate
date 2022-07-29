@@ -5,7 +5,6 @@ import jm.task.core.jdbc.util.Util;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -63,8 +62,6 @@ public class UserDaoHibernateImpl implements UserDao {
              Session session = sessionFactory.openSession()) {
             session.beginTransaction();
             session.createQuery("delete User where id = id");
-//            User user = session.get(User.class, id);
-//            session.delete(user);
             session.getTransaction().commit();
         }  catch (Exception e) {
             e.printStackTrace();
